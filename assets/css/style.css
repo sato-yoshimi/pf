@@ -1,0 +1,493 @@
+@charset "UTF-8";
+
+/* 共通*/
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+a{
+  text-decoration: none;
+  color:#fff;
+}
+a:hover{
+  opacity: 0.7;
+}
+.common-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.main-section {
+  padding-bottom: 50px;
+  }
+.pc {
+  display: block;
+}
+.sp {
+  display: none;
+}
+
+/* ヘッダー */
+.page-header {
+  background-color: #3E2A25;
+}
+.page-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+.page-header_title {
+  color: #fff;
+  line-height: 1;
+  font-size: 2.4rem;
+}
+.page-header_title span {
+  font-size: 1.6rem;
+}
+.header_logo img {
+  height: 50px;
+  width: auto;
+}
+.header-image {
+  width: 100%;
+}
+.nav-list {
+  display: flex;
+}
+.nav-item:not(:last-child) {
+  padding-right: 55px;
+}
+#nav-open, #nav-content { /* ハンバーガーメニュー非表示*/
+  display: none;
+}
+/* メイン */
+.main-content {
+  padding: 50px 0 0 0;
+  background-color: #FFEEEE;
+  margin: 0 auto;
+}
+.section-title {
+  line-height: 1;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+.work-list__card {
+  background-color: #fff;
+  padding: 40px 40px 0px 40px;
+  border:none;
+  border-radius: 35px;
+}
+.photo-work {
+  display: flex;
+  align-items: flex-start;
+}
+.photo-work__navi {
+  padding-left: 30px;
+}
+.fadein {  /*フェードイン*/
+  opacity : 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+.work-list__card:not(:last-child) {
+  margin-bottom: 30px;
+}
+.work-list__item:not(:last-child) {
+  margin-bottom: 30px;
+  }
+.photo-work__title {
+  font-size: 2rem;
+}
+/* アコーディオン */
+.ac-box{
+  text-align: center;
+}
+.ac-box label {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: bold;
+  background: #EE6666;
+  padding: 15px 20px;
+  border-radius: 35px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s;
+}
+.ac-box label:hover{
+  background: rgba( 242, 96, 107, 0.55 );
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.ac-box input{
+  display: none;
+}
+.ac-box label:after{
+  color: #fff;
+  font-family:"Font Awesome 5 Free";
+  content:"レシピを見る \f107";
+}
+.ac-box input:checked ~ label::after {
+  color: #fff;
+  font-family:"Font Awesome 5 Free";
+  content:"レシピを閉じる \f106";
+}
+.ac-box div{
+  height: 0px;
+  padding: 0px;
+  margin-top: 30px;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.ac-box input:checked ~ div{
+  height: auto;
+  background: #ffffff;
+  opacity: 1;
+  padding-bottom: 40px;
+}
+.recipe-box {
+  text-align: left;
+}
+.topic-title {
+  color: #EE6666;
+  font-weight: bold;
+}
+.recipe-box ol {
+  counter-reset: recipe-box__number;
+  list-style: none;
+}
+.recipe-box__number {
+  color: #EE6666;
+}
+.recipe-box ol li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+.recipe-box li::before {
+  counter-increment:recipe-box__number;
+  content: counter(recipe-box__number)". ";
+  color: #EE6666;
+  position: absolute;
+  left: 0;
+}
+.point {
+  margin-top: 30px;
+}
+/* キャンペーンバナー */
+.banner-img img {
+  width: 100%;
+  height: auto;
+}
+/* スライドショー */
+.fade {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+.fade img{
+  width: 100%;
+}
+.slick-prev::before, .slick-next::before {
+  font-size: 2.4rem;
+  color: #fff;
+}.slick-prev
+{
+  left: 25px;
+  z-index: 1;
+}
+.slick-next
+{
+  right: 25px;
+  z-index: 1;
+}
+/* シェアボタン */
+.shareList {
+  list-style:none;
+  display: flex;
+  flex-wrap:wrap;
+  padding:0;margin:-5px 0 0 -5px;
+}
+.shareList__item {
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	margin:9px 0 0 5px;
+}
+.shareList__link {
+	display:block;
+  color:#ffffff;
+  padding:0 20px;
+	text-decoration: none;
+	transition: .2s;
+	border:2px solid #FFEEEE;
+	border-radius: 5px;
+}
+.shareList__link::before{
+	font-size:1.6rem;
+}
+.shareList__link::after{
+	content:attr(title);
+	font-size: 1.4rem;
+	font-weight:700;
+	vertical-align: top;
+	margin-left:5px;
+}
+.fab {
+  margin-right: 10px;
+}
+.facebook {
+  background:#3B5998;
+}
+.facebook:hover {
+  color:#3B5998; background:#ffffff; border-color:#3B5998;
+}
+.twitter {
+  background:#55acee;
+}
+.twitter:hover {
+  color:#55acee; background:#ffffff; border-color:#55acee;
+}
+.line {
+  background:#1dcd00;
+}
+.line:hover {
+  color:#1dcd00; background:#ffffff; border-color:#1dcd00;
+}
+
+/* フッター */
+.page-footer {
+    padding: 22px 0;
+    background-color: #3E2A25;
+}
+.page-footer p {
+    font-size: 1rem;
+    line-height: 1.0;
+    text-align: center;
+    color: #fff;
+  }
+/* スクロールボタン */
+#page_top{
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: 1;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 50px;
+}
+#page_top a:hover{
+  opacity: 0.7;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f106';
+  font-size: 3.2rem;
+  color: #EE6666;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'TOP';
+  font-size: 13px;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  color: #EE6666;
+}
+/* レスポンシブ */
+@media screen and (max-width: 960px) {
+.header-nav {  /*ナビゲーションメニュー非表示*/
+  display: none;
+} 
+/*ハンバーガーメニュー*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+}
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  transition: all 0.4s;
+  height: 4px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #ffffff;
+  display: block;
+  content: '';
+  cursor: pointer;
+  z-index: 9999;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+#nav-open p {
+  color: #fff;
+  font-size: 1rem;
+}
+#nav-open p:before {
+  content: "MENU";
+  position: relative;
+  top:30px;
+  left: -5px;
+}
+/*ハンバーガーメニュー中身*/
+#nav-content {
+  display: none;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 9998;
+  transition: 0.5s ease;
+}
+#nav-content.open {
+  display: block;
+  opacity: 1;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9998;
+  width: 60%;
+  height: 100%;
+  background: #3E2A25;
+  overflow: hidden;
+}
+.hamburger-top {
+  height: 90px;
+}
+.category {
+  text-align: center;
+}
+.category-title {
+  font-size: 2rem;
+  padding: 1rem;
+  border: solid #3E2A25;
+  border-width: 0 5px 5px 5px;
+  background-color: #EE6666;
+}
+.category-title:hover {
+  opacity: 0.8;
+}
+
+/*三本ライン*/
+#nav-open.active span {
+  -webkit-transform: translateY(8px) rotate(-45deg);
+  transform: translateY(8px) rotate(-45deg);
+}
+#nav-open.active span:before {
+  -webkit-transform: translateY(-8px) rotate(45deg);/*打ち消す*/
+  transform: translateY(-8px) rotate(45deg);/*打ち消す*/
+  opacity: 0;
+}
+#nav-open.active span:after {
+  -webkit-transform: translateY(-16px) rotate(45deg);
+  transform: translateY(-16px) rotate(90deg);
+}
+#nav-open.active p:before {
+  content: "CLOSE";
+  position: relative;
+  top:30px;
+  left: -5px;
+  z-index: 9999;
+}
+/* ヘッダー */
+.common-inner {
+  max-width: 90%;
+  }
+.header-image {
+object-fit: cover;
+}
+.pc {
+  display: none;
+}
+.sp {
+  display: block;
+}
+/* メイン */
+.photo-work {
+  display: block;
+  text-align: center;
+}
+.photo-work img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.photo-work__navi {
+  padding: 0px;
+}
+.photo-work__title {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0 0 0;
+  text-align: left;
+  margin: 0 auto;
+}
+.photo-work__text {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0 30px 0;
+  text-align: left;
+  margin: 0 auto;
+}
+}
+
+@media screen and (max-width: 560px) {
+  .page-header__inner {
+    padding: 10px 15px;
+  }
+  .header_logo img {
+    height: 30px;
+  }
+  .hamburger-top {
+    height: 60px;
+  }
+  .work-list__card {
+    padding: 20px 20px 0px 20px;
+    border-radius: 15px;
+  }
+  .slick-prev::before, .slick-next::before {
+    font-size: 2rem;
+    color: #fff;
+  }.slick-prev
+  {
+    left: 15px;
+    z-index: 1;
+  }
+  .slick-next
+  {
+    right: 15px;
+    z-index: 1;
+  }
+
+}

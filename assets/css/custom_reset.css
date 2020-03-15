@@ -1,0 +1,19 @@
+html {
+  /* フォントサイズの計算に1rem=10pxを使いたいのでhtmlに62.5%を指定 */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  line-height: 1.75;
+  color: #3E2A25;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  /* font-weight: normal; */
+}
+
+img {
+  vertical-align: bottom;
+}
